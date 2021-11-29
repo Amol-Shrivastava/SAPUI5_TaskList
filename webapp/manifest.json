@@ -1,0 +1,102 @@
+{
+    "_version": "1.36.0",
+    "sap.app": {
+        "id": "tcs.hr.hire",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.95.0"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "phone": true,
+            "tablet": true
+        },
+        "supportedThemes": [
+            "sap_fiori_3_dark"
+        ]
+    },
+    "sap.ui5": {
+        "dependencies": {
+            "minUI5Version": "1.60.0"
+        },
+        "libs": {
+            "sap.m": {}
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleUrl": "i18n/i18n.properties"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/data.json"
+            },
+            "taskList": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/tasklist.json"
+            }
+        },
+        "rootView": {
+            "viewName": "tcs.hr.hire.views.App",
+            "id": "idApp",
+            "type": "XML"
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "tcs.hr.hire.views",
+                "controlId": "idAppView",
+                "controlAggregation": "pages",
+                "clearControlAggregation": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "home",
+                    "target": [
+                        "form",
+                        "detail_list"
+                    ]
+                },
+                {
+                    "pattern": "detail/{task_id}",
+                    "name": "list_detail",
+                    "target": [
+                        "form",
+                        "detail_list"
+                    ]
+                }
+            ],
+            "targets": {
+                "form": {
+                    "viewId": "idForm",
+                    "viewName": "masterForm",
+                    "controlAggregation": "masterPages"
+                },
+                "detail_list": {
+                    "viewId": "idList",
+                    "viewName": "detailList",
+                    "controlAggregation": "detailPages"
+                },
+                "initial_Page": {
+                    "viewId": "idEmpty",
+                    "viewName": "initialPage",
+                    "controlAggregation": "detailPages"
+                }
+            }
+        }
+    }
+}

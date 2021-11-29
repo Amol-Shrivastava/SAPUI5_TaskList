@@ -1,0 +1,8 @@
+<hot:View controllerName="tcs.hr.hire.controllers.detailList"
+    xmlns="sap.m"
+    xmlns:hot="sap.ui.core.mvc">
+
+    <List id="taskList" items="{path: 'taskList>/taskList', templateShareable:false}" headerText="{i18n>ListPage_Title}">
+        <ObjectListItem title="{taskName}" intro="{taskObj}"></ObjectListItem>
+    </List>
+</hot:View>

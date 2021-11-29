@@ -1,0 +1,8 @@
+<mouse:View controllerName="tcs.hr.hire.controllers.initialPage"
+    xmlns="sap.m"
+    xmlns:mouse="sap.ui.core.mvc">
+
+    <FlexBox height="100%" width="100%" alignItems="Center" justifyContent="Center" direction="Column">
+        <Image src="{/img_src}" alt="{i18n>imgCaption}" mode="Image" height="15rem" width="15rem"/>
+    </FlexBox>
+</mouse:View>

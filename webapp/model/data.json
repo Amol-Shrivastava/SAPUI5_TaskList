@@ -1,0 +1,32 @@
+{
+    "img_src": "../assets/list_bg.png",
+    "inpt_field_structure": {
+        "taskName": "",
+        "taskObj": "",
+        "taskDate": "",
+        "taskStartTime": "",
+        "taskCompletionTime": "",
+        "taskSeverity": "",
+        "stringLength": 0,
+        "maxString": 2000,
+        "taskSeverityConfig": [
+            {
+                "taskSeverity": "Very High",
+                "backgroundColor": "#FF0000"
+            },
+            {
+                "taskSeverity": "High",
+                "backgroundColor": "#FF5C5C"
+            },
+            {
+                "taskSeverity": "Medium",
+                "backgroundColor": "##F7BEC0"
+            },
+            {
+                "taskSeverity": "Low",
+                "backgroundColor": "##E9EAE0"
+            }
+        ]
+    },
+    "taskList": []
+}

@@ -1,0 +1,105 @@
+<cool:View xmlns:core="sap.ui.core" 
+controllerName = "tcs.hr.hire.controllers.masterForm"
+    xmlns="sap.m"
+    xmlns:cool="sap.ui.core.mvc"
+    xmlns:layout="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form">
+
+
+    <form:Form id="inputForm" editable="true" visible="true">
+        <form:title>
+            <core:Title text="Task Details"></core:Title>
+        </form:title>
+
+        <form:layout>
+            <form:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+        </form:layout>
+        <form:formContainers>
+            <form:FormContainer id="inputBox">
+                <form:formElements >
+                    <form:FormElement id="taskName">
+                        <form:label>
+                            <Label text="{i18n>taskName_label}"></Label>
+                        </form:label>
+                        <form:fields>
+                            <Input name="task_name" type="Text" placeholder="{i18n>taskName_placeholder}" value="{/inpt_field_structure/taskName}" required="true"></Input>
+                        </form:fields>
+                    </form:FormElement>
+
+                    <form:FormElement id="taskAbout">
+                        <HBox alignItems="Center" justifyContent="SpaceBetween">
+                            <items>
+                                <Label text="{i18n>taskObj_label}" required="true"></Label>
+                                <Text text="{/inpt_field_structure/stringLength}/{/inpt_field_structure/maxString}"/>
+                            </items>
+                        </HBox>
+
+                        <form:fields>
+                            <TextArea placeholder="{i18n>taskObj_placeholder}" editable="true" height="8rem" value="{/inpt_field_structure/taskObj}" id="textObj_area" required="true" valueLiveUpdate="true" liveChange="countWords">
+
+                            </TextArea>
+
+                        </form:fields>
+                    </form:FormElement>
+
+                    <form:FormElement id="taskDate">
+                        <form:label>
+                            <Label text="{i18n>taskDate_label}"></Label>
+                        </form:label>
+
+                        <form:fields>
+                            <DatePicker id="task_date" placeholder="{i18n>taskDate_placeholder}" value="{/inpt_field_structure/taskDate}" required="true"></DatePicker>
+                        </form:fields>
+                    </form:FormElement>
+
+                    <form:FormElement id="taskstartTime">
+                        <form:label>
+                            <Label text="{i18n>taskStartTime_label}"></Label>
+                        </form:label>
+
+                        <form:fields>
+                            <TimePicker id="task_start_time" placeholder="{i18n>taskStartTime_placeholder}" value="{/inpt_field_structure/taskStartTime}" required="true"></TimePicker>
+                        </form:fields>
+                    </form:FormElement>
+
+                    <form:FormElement id="taskCompTime">
+                        <form:label>
+                            <Label text="{i18n>taskCompTime_label}"></Label>
+                        </form:label>
+
+                        <form:fields>
+                            <TimePicker id="task_comp_time" placeholder="{i18n>taskCompTime_placeholder}" value="{/inpt_field_structure/taskCompletionTime}" required="true"></TimePicker>
+                        </form:fields>
+                    </form:FormElement>
+
+                    <form:FormElement id="taskSeverity">
+
+                        <form:label>
+                            <Label text="{i18n>taskSeverity_label}"></Label>
+                        </form:label>
+
+                        <form:fields>
+                            <ComboBox placeholder="{i18n>taskSeverity_placeholder}" value="{/inpt_field_structure/taskSeverity}" required="true">
+                                <items>
+                                    <core:Item key="{i18n>selectItem_VH}" text="{i18n>selectItem_VH}"></core:Item>
+                                    <core:Item key="{i18n>selectItem_H}" text="{i18n>selectItem_H}"></core:Item>
+                                    <core:Item key="{i18n>selectItem_M}" text="{i18n>selectItem_M}"></core:Item>
+                                    <core:Item key="{i18n>selectItem_S}" text="{i18n>selectItem_S}"></core:Item>
+                                </items>
+                            </ComboBox>
+
+                        </form:fields>
+
+                    </form:FormElement>
+
+                </form:formElements>
+            </form:FormContainer>
+        </form:formContainers>
+
+    </form:Form>
+
+    <Button text="{i18n>SubtButton_Text}" type="Emphasized" width="100%" press="submitDetails"></Button>
+    <Button text="{i18n>CancelButton_Text}" type="Reject" width="100%" press="clearDetails"></Button>
+    <BusyIndicator id="busyCircles" text="Saving Task 😊" visible="false"></BusyIndicator>
+
+</cool:View>

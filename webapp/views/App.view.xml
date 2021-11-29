@@ -1,0 +1,5 @@
+<mvc:View controllerName="tcs.hr.hire.controllers.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <SplitApp id="idAppView"/>
+</mvc:View>

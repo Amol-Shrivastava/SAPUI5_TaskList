@@ -2,7 +2,7 @@
     xmlns="sap.m"
     xmlns:hot="sap.ui.core.mvc">
 
-    <List id="taskList" items="{/taskList}" headerText="{i18n>ListPage_Title}">
+    <List id="taskList" items="{taskList>/taskList}" headerText="{i18n>ListPage_Title}">
         <ObjectListItem title="{taskName}" intro="{taskObj}"></ObjectListItem>
     </List>
 </hot:View>

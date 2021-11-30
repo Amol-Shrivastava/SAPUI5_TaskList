@@ -29,8 +29,12 @@ sap.ui.define(
         // );
         // let list = this.getView().byId("taskList");
         // list.bindItems("taskList>/taskList");
-        console.log(this);
-        console.log(this.getView());
+        // console.log(this);
+        // console.log(this.getView());
+        let taskArr = JSON.parse(localStorage.getItem("taskList"));
+
+        this.getView().getModel("taskList").setProperty("/taskList", taskArr);
+        console.log(this.getView().getModel("taskList").oData);
       },
     });
   }

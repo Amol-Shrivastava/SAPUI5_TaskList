@@ -20,6 +20,9 @@ sap.ui.define(
         // this.getView().setModel(taskList, "task_list");
 
         // console.log(this.getView().getModel("task_list").oData);
+        let taskArr = JSON.parse(localStorage.getItem("taskList"));
+        this.getOwnerComponent().getModel('taskList').setProperty("/taskList", taskArr);
+        console.log(this.getOwnerComponent().getModel('taskList').oData);
       },
 
       onAfterRendering: function () {

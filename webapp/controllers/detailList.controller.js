@@ -1,8 +1,8 @@
 /* jshint esversion: 6 */
 
 sap.ui.define(
-  ["tcs/hr/hire/controllers/BaseController"],
-  function (BaseController) {
+  ["tcs/hr/hire/controllers/BaseController", "sap/m/ObjectListItem"],
+  function (BaseController, ObjectListItem) {
     return BaseController.extend("tcs.hr.hire.controllers.detailList", {
       onInit: function () {
         console.log("Inside detail List controller");
@@ -21,23 +21,32 @@ sap.ui.define(
 
         // console.log(this.getView().getModel("task_list").oData);
         let taskArr = JSON.parse(localStorage.getItem("taskList"));
-        this.getOwnerComponent().getModel('taskList').setProperty("/taskList", taskArr);
-        console.log(this.getOwnerComponent().getModel('taskList').oData);
+        this.getOwnerComponent()
+          .getModel("taskList")
+          .setProperty("/taskList", taskArr);
+        console.log(this.getOwnerComponent().getModel("taskList").oData);
       },
 
       onAfterRendering: function () {
         // this.getView().byId("taskList").bindItems("taskList>/taskList");
         // console.log(
-        //   this.getView().getModel("taskList").getProperty("taskList")
-        // );
+        // var tasks = this.getView()
+        //   .getModel("taskList")
+        //   .getProperty("/taskList");
+        // // // );
         // let list = this.getView().byId("taskList");
-        // list.bindItems("taskList>/taskList");
+        // var objectListItem = new ObjectListItem({
+        //   intro: "{ taskName }",
+        //   title: "{ taskObj }",
+        // });
+        // list.bindAggregation("items", "/tasks", objectListItem);
+
         // console.log(this);
         // console.log(this.getView());
-        let taskArr = JSON.parse(localStorage.getItem("taskList"));
+        // let taskArr = JSON.parse(localStorage.getItem("taskList"));
 
-        this.getView().getModel("taskList").setProperty("/taskList", taskArr);
-        console.log(this.getView().getModel("taskList").oData);
+        // this.getView().getModel("taskList").setProperty("/taskList", taskArr);
+        // console.log(this.getView().getModel("taskList").oData);
       },
     });
   }

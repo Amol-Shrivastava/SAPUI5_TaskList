@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ui5/cli": "^2.14.0",
+    "@ui5/cli": "^2.14.1",
     "uuid": "^8.3.2"
   }
 }

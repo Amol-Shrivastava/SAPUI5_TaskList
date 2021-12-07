@@ -4,6 +4,6 @@
 
     <List id="taskList" items="{taskList>/taskList}" headerText="{i18n>ListPage_Title}">
         <!-- <ObjectListItem title="{taskName}" intro="{taskObj}"></ObjectListItem> -->
-        <ObjectListItem title="{taskName}" intro="{taskObj}"></ObjectListItem>
+        <ObjectListItem title="{taskList>taskName}" intro="{taskList>taskObj}"></ObjectListItem>
     </List>
 </hot:View>
